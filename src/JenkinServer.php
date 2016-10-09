@@ -48,7 +48,7 @@ class JenkinServer
         $job_object->status = '';
 
         if(array_key_exists('name', $job)) {
-            $job_object->name = $job->name;
+            $job_object->name = $job['name'];
         }
 
         if(array_key_exists('lastBuild', $job) &&

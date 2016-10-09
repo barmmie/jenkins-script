@@ -30,8 +30,8 @@ $jenkins = new JenkinServer($server);
 
 $jenkins_jobs = $jenkins->getJobs();
 
-
-if( count($jenkins_jobs) > 0) {
+$count = count($jenkins_jobs);
+if( $count > 0) {
 
     $db = SqliteDb::instance($db_path);
     $conn = $db->getConnection();
@@ -48,6 +48,8 @@ if( count($jenkins_jobs) > 0) {
     }
 
 }
+
+print "{$count} job(s) was retrieved from server '$server' and saved to db '$db_path'".PHP_EOL;
 
 
 
